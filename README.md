@@ -1,4 +1,4 @@
-<img src="https://github.com/yegor256/netbout.rb/raw/master/public/logo.svg" width="132px"/>
+<img src="https://github.com/yegor256/netbout/raw/master/public/logo.svg" width="132px"/>
 
 [![DevOps By Rultor.com](http://www.rultor.com/b/yegor256/netbout.rb)](http://www.rultor.com/p/yegor256/netbout.rb)
 [![We recommend RubyMine](https://www.elegantobjects.org/rubymine.svg)](https://www.jetbrains.com/ruby/)
