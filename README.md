@@ -1,15 +1,15 @@
-<img src="https://github.com/yegor256/netbout/raw/master/public/logo.svg" width="132px"/>
+<img src="https://github.com/yegor256/netbout.rb/raw/master/public/logo.svg" width="132px"/>
 
-[![DevOps By Rultor.com](http://www.rultor.com/b/yegor256/netbout)](http://www.rultor.com/p/yegor256/netbout)
+[![DevOps By Rultor.com](http://www.rultor.com/b/yegor256/netbout.rb)](http://www.rultor.com/p/yegor256/netbout.rb)
 [![We recommend RubyMine](https://www.elegantobjects.org/rubymine.svg)](https://www.jetbrains.com/ruby/)
 
-[![rake](https://github.com/yegor256/netbout/actions/workflows/rake.yml/badge.svg)](https://github.com/yegor256/netbout/actions/workflows/rake.yml)
-[![PDD status](http://www.0pdd.com/svg?name=yegor256/netbout)](http://www.0pdd.com/p?name=yegor256/netbout)
-[![Gem Version](https://badge.fury.io/rb/netbout.svg)](http://badge.fury.io/rb/netbout)
-[![Test Coverage](https://img.shields.io/codecov/c/github/yegor256/netbout.svg)](https://codecov.io/github/yegor256/netbout?branch=master)
-[![Yard Docs](http://img.shields.io/badge/yard-docs-blue.svg)](http://rubydoc.info/github/yegor256/netbout/master/frames)
-[![Hits-of-Code](https://hitsofcode.com/github/yegor256/netbout)](https://hitsofcode.com/view/github/yegor256/netbout)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/yegor256/netbout/blob/master/LICENSE.txt)
+[![rake](https://github.com/yegor256/netbout.rb/actions/workflows/rake.yml/badge.svg)](https://github.com/yegor256/netbout.rb/actions/workflows/rake.yml)
+[![PDD status](http://www.0pdd.com/svg?name=yegor256/netbout.rb)](http://www.0pdd.com/p?name=yegor256/netbout.rb)
+[![Gem Version](https://badge.fury.io/rb/netbout.rb.svg)](http://badge.fury.io/rb/netbout.rb)
+[![Test Coverage](https://img.shields.io/codecov/c/github/yegor256/netbout.rb.svg)](https://codecov.io/github/yegor256/netbout.rb?branch=master)
+[![Yard Docs](http://img.shields.io/badge/yard-docs-blue.svg)](http://rubydoc.info/github/yegor256/netbout.rb/master/frames)
+[![Hits-of-Code](https://hitsofcode.com/github/yegor256/netbout.rb)](https://hitsofcode.com/view/github/yegor256/netbout.rb)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/yegor256/netbout.rb/blob/master/LICENSE.txt)
 
 This Ruby gem connects you to [Netbout](https://netbout.com).
 
