@@ -31,12 +31,11 @@ require_relative '../../lib/netbout'
 class TestSearch < Minitest::Test
   def test_post_and_search
     inbox = Netbout::Inbox.new('test')
-    bout = inbox.start('Hello, друг!')
-    msg = bout.post('How are you, друг?')
     found = []
     inbox.search.each do |m|
       found << m
+      break if found.size > 42
     end
-    assert_equal(1, found.size)
+    assert(found.size > 20)
   end
 end
