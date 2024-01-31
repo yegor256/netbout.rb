@@ -21,36 +21,22 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-require_relative 'http'
-require_relative 'message'
+require 'minitest/autorun'
+require_relative '../../lib/netbout'
 
-# Search.
+# Test of Search.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
 # Copyright:: Copyright (c) 2024 Yegor Bugayenko
 # License:: MIT
-class Netbout::Search
-  def initialize(iri, token, query)
-    @iri = iri
-    @token = token
-    @query = query
-  end
-
-  def each
-    entry = @iri.append('/search').add(q: @query).add(limit: '10')
-    offset = 0
-    loop do
-      rsp = Netbout::Http.new(entry.over(offset: offset), @token).get
-      p entry.over(offset: offset).to_s
-      json = JSON.parse(rsp.response_body)
-      seen = 0
-      json.each do |h|
-        yield Netbout::Message.new(@iri, @token, h['id'])
-        p h
-        seen += 1
-      end
-      offset += seen
-      p offset
-      break if seen.zero?
+class TestSearch < Minitest::Test
+  def test_post_and_search
+    inbox = Netbout::Inbox.new('test')
+    bout = inbox.start('Hello, друг!')
+    msg = bout.post('How are you, друг?')
+    found = []
+    inbox.search.each do |m|
+      found << m
     end
+    assert_equal(1, found.size)
   end
 end

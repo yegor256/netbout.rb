@@ -38,6 +38,12 @@ class Netbout::Inbox
     @iri = Iri.new('https://netbout.com')
   end
 
+  def identity
+    rsp = Netbout::Http.new(@iri.append('/self'), @token).get
+    json = JSON.parse(rsp.response_body)
+    json['identity']
+  end
+
   def search(query = '')
     Netbout::Search.new(@iri, @token, query)
   end
