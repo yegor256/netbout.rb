@@ -60,6 +60,6 @@ class Netbout::Bout
   end
 
   def tags
-    Netbout::Tags.new(@token, self)
+    Netbout::Tags.new(@iri, @token, id)
   end
 end

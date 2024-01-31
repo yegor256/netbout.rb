@@ -21,33 +21,23 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-require_relative 'http'
-require_relative 'message'
+require 'minitest/autorun'
+require_relative '../../lib/netbout'
 
-# Search.
+# Test of Tags.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
 # Copyright:: Copyright (c) 2024 Yegor Bugayenko
 # License:: MIT
-class Netbout::Search
-  def initialize(iri, token, query)
-    @iri = iri
-    @token = token
-    @query = query
-  end
-
-  def each
-    entry = @iri.append('/search').add(q: @query)
-    offset = 0
-    loop do
-      rsp = Netbout::Http.new(entry.over(offset: offset), @token).get
-      json = JSON.parse(rsp.response_body)
-      seen = 0
-      json.each do |h|
-        yield Netbout::Message.new(@iri, token, h['id'])
-        seen += 1
-      end
-      offset += seen
-      break if seen.zero?
-    end
+class TestTags < Minitest::Test
+  def test_put_and_list
+    inbox = Netbout::Inbox.new('test')
+    bout = inbox.start('Hello, друг!')
+    assert(bout.id.positive?)
+    key = 'tag1'
+    value = 'привет!'
+    bout.tags.put(key, value)
+    t = inbox.take(bout.id).tags.to_a.first
+    assert_equal(key, t['name'])
+    assert_equal(value, t['value'])
   end
 end

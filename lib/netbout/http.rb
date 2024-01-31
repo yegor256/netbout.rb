@@ -73,7 +73,7 @@ module Netbout
 
     def checked(rsp)
       code = rsp.response_code.to_i
-      raise "Invalid response #{code}: '#{rsp.headers['x-netbout-flash']}'" if code != 200 && code != 303
+      raise "Invalid response #{code}: '#{rsp.headers['x-netbout-flash']}'" if code != 200 && code != 303 && code != 302
       rsp
     end
 

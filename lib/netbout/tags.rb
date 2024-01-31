@@ -21,20 +21,25 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+require_relative 'http'
+
 # Tags.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
 # Copyright:: Copyright (c) 2024 Yegor Bugayenko
 # License:: MIT
 class Netbout::Tags
-  def initialize(iri, token, bout)
+  def initialize(iri, token, id)
     @iri = iri
     @token = token
-    @bout = bout
+    @id = id
   end
 
-  def each
-    []
+  def to_a
+    JSON.parse(Netbout::Http.new(@iri.append('/tags').append(@id), @token).get.response_body)
   end
 
-  def put(key, value); end
+  def put(key, value)
+    Netbout::Http.new(@iri.append('/b').append(@id).append('/tag'), @token)
+      .post('name' => key, 'value' => value)
+  end
 end
