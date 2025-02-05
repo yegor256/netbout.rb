@@ -25,7 +25,7 @@ Metrics/PerceivedComplexity:
   Max: 20
 Layout/EmptyLineAfterGuardClause:
   Enabled: false
-required:
+require:
   - rubocop-rake
   - rubocop-minitest
   - rubocop-performance
