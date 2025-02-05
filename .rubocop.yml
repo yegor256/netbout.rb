@@ -7,7 +7,6 @@ AllCops:
   TargetRubyVersion: 2.3
   SuggestExtensions: false
   NewCops: enable
-
 Gemspec/RequiredRubyVersion:
   Enabled: false
 Metrics/MethodLength:
@@ -26,3 +25,7 @@ Metrics/PerceivedComplexity:
   Max: 20
 Layout/EmptyLineAfterGuardClause:
   Enabled: false
+required:
+  - rubocop-rake
+  - rubocop-minitest
+  - rubocop-performance
