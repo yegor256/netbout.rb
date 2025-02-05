@@ -32,6 +32,6 @@ gem 'rubocop', '1.60.2', require: false
 gem 'rubocop-minitest', '>0', require: false
 gem 'rubocop-performance', '>0', require: false
 gem 'rubocop-rake', '>0', require: false
-gem 'rubocop-rspec', '2.26.1', require: false
+gem 'rubocop-rspec', '2.31.0', require: false
 gem 'simplecov', '0.22.0', require: false
 gem 'webmock', '3.20.0', require: false
