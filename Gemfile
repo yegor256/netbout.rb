@@ -8,7 +8,7 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'minitest', '5.22.2', require: false
-gem 'rake', '13.1.0', require: false
+gem 'rake', '13.2.1', require: false
 gem 'rdoc', '6.6.2', require: false
 gem 'rspec-rails', '6.1.1', require: false
 gem 'rubocop', '1.60.2', require: false
