@@ -1,13 +1,12 @@
 # frozen_string_literal: true
 
-#
 # SPDX-FileCopyrightText: Copyright (c) 2024-2026 Yegor Bugayenko
 # SPDX-License-Identifier: MIT
 
 require 'iri'
 require 'json'
-require_relative 'http'
 require_relative 'bout'
+require_relative 'http'
 require_relative 'search'
 
 # Inbox.
@@ -16,15 +15,13 @@ require_relative 'search'
 # License:: MIT
 class Netbout::Inbox
   def initialize(token)
-    require_relative 'http'
+    require_relative('http')
     @token = token
     @iri = Iri.new('https://netbout.com')
   end
 
   def identity
-    rsp = Netbout::Http.new(@iri.append('/self'), @token).get
-    json = JSON.parse(rsp.response_body)
-    json['identity']
+    JSON.parse(Netbout::Http.new(@iri.append('/self'), @token).get.response_body)['identity']
   end
 
   def search(query = '')
@@ -32,13 +29,13 @@ class Netbout::Inbox
   end
 
   def start(title)
-    rsp = Netbout::Http.new(@iri.append('/start'), @token).post('title' => title)
-    id = rsp.headers['X-Netbout-Bout'].to_i
-    take(id)
+    take(Integer(Netbout::Http.new(@iri.append('/start'), @token).post('title' => title).headers['X-Netbout-Bout'], 10))
   end
 
   def take(id)
-    rsp = Netbout::Http.new(@iri.append('/bout').append(id), @token).get
-    Netbout::Bout.new(@iri, @token, JSON.parse(rsp.response_body))
+    Netbout::Bout.new(
+      @iri, @token,
+      JSON.parse(Netbout::Http.new(@iri.append('/bout').append(id), @token).get.response_body)
+    )
   end
 end

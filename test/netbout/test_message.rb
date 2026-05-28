@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-#
 # SPDX-FileCopyrightText: Copyright (c) 2024-2026 Yegor Bugayenko
 # SPDX-License-Identifier: MIT
 
@@ -13,13 +12,11 @@ require_relative '../../lib/netbout'
 # License:: MIT
 class TestMessage < Minitest::Test
   def test_attach_flag
-    inbox = Netbout::Inbox.new('test')
-    bout = inbox.start('Hello, друг!')
-    msg = bout.post('oops')
+    msg = Netbout::Inbox.new('test').start('Hello, друг!').post('oops')
     tag = 'hey-you'
     msg.attach(tag)
     assert_equal(tag, msg.flags.first['name'])
     msg.detach(tag)
-    assert(msg.flags.empty?)
+    assert_empty(msg.flags)
   end
 end

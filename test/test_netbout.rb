@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-#
 # SPDX-FileCopyrightText: Copyright (c) 2024-2026 Yegor Bugayenko
 # SPDX-License-Identifier: MIT
 
@@ -12,7 +11,5 @@ require_relative '../lib/netbout'
 # Copyright:: Copyright (c) 2024-2026 Yegor Bugayenko
 # License:: MIT
 class TestNetbout < Minitest::Test
-  def test_basic
-    # Nothing yet
-  end
+  def test_basic; end
 end

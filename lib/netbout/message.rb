@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-#
 # SPDX-FileCopyrightText: Copyright (c) 2024-2026 Yegor Bugayenko
 # SPDX-License-Identifier: MIT
 
@@ -16,7 +15,7 @@ class Netbout::Message
   end
 
   def id
-    @json['id'].to_i
+    Integer(@json['id'])
   end
 
   def author
@@ -32,8 +31,7 @@ class Netbout::Message
   end
 
   def attach(flag)
-    Netbout::Http.new(@iri.append('/m').append(id).append('/attach'), @token)
-      .post('name' => flag)
+    Netbout::Http.new(@iri.append('/m').append(id).append('/attach'), @token).post('name' => flag)
   end
 
   def detach(flag)

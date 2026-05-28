@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-#
 # SPDX-FileCopyrightText: Copyright (c) 2024-2026 Yegor Bugayenko
 # SPDX-License-Identifier: MIT
 
@@ -15,7 +14,7 @@ class TestTags < Minitest::Test
   def test_put_and_list
     inbox = Netbout::Inbox.new('test')
     bout = inbox.start('Hello, друг!')
-    assert(bout.id.positive?)
+    assert_predicate(bout.id, :positive?)
     key = 'tag1'
     value = 'привет!'
     bout.tags.put(key, value)

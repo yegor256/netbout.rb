@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-#
 # SPDX-FileCopyrightText: Copyright (c) 2024-2026 Yegor Bugayenko
 # SPDX-License-Identifier: MIT
 
@@ -30,11 +29,10 @@ class Netbout::Search
     entry = @iri.append('/search').add(q: @query).add(limit: '10')
     offset = 0
     loop do
-      rsp = Netbout::Http.new(entry.over(offset: offset), @token).get
-      json = JSON.parse(rsp.response_body)
+      json = JSON.parse(Netbout::Http.new(entry.over(offset: offset), @token).get.response_body)
       seen = 0
       json.each do |h|
-        yield Netbout::Message.new(@iri, @token, h['id'])
+        yield(Netbout::Message.new(@iri, @token, h['id']))
         seen += 1
       end
       offset += seen

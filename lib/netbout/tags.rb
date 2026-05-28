@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-#
 # SPDX-FileCopyrightText: Copyright (c) 2024-2026 Yegor Bugayenko
 # SPDX-License-Identifier: MIT
 
@@ -22,7 +21,6 @@ class Netbout::Tags
   end
 
   def put(key, value)
-    Netbout::Http.new(@iri.append('/b').append(@id).append('/tag'), @token)
-      .post('name' => key, 'value' => value)
+    Netbout::Http.new(@iri.append('/b').append(@id).append('/tag'), @token).post('name' => key, 'value' => value)
   end
 end
