@@ -22,6 +22,7 @@ GEM
       rexml
     date (3.5.1)
     docile (1.4.1)
+    drb (2.2.3)
     erb (6.0.4)
     ethon (0.18.0)
       ffi (>= 1.15.0)
@@ -35,7 +36,9 @@ GEM
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
     logger (1.7.0)
-    minitest (5.27.0)
+    minitest (6.0.6)
+      drb (~> 2.0)
+      prism (~> 1.5)
     openssl (4.0.2)
     parallel (2.1.0)
     parser (3.3.11.1)
@@ -110,7 +113,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  minitest (~> 5.22)
+  minitest (~> 6.0)
   netbout!
   rake (~> 13.1)
   rdoc (~> 6.6)
