@@ -17,7 +17,7 @@ class Netbout::Inbox
   def initialize(token)
     require_relative('http')
     @token = token
-    @iri = Iri.new('https://netbout.com')
+    @iri = Iri.new('https://www.netbout.com')
   end
 
   def identity
