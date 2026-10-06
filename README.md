@@ -1,4 +1,6 @@
-<img src="https://github.com/yegor256/netbout/raw/master/public/logo.svg" width="132px"/>
+# Netbout API Client
+
+![Netbout logo](https://github.com/yegor256/netbout/raw/master/public/logo.svg)
 
 [![DevOps By Rultor.com](https://www.rultor.com/b/yegor256/netbout.rb)](https://www.rultor.com/p/yegor256/netbout.rb)
 [![We recommend RubyMine](https://www.elegantobjects.org/rubymine.svg)](https://www.jetbrains.com/ruby/)
@@ -17,12 +19,13 @@ This Ruby gem connects you to [Netbout](https://netbout.com).
 
 Read [these guidelines](https://www.yegor256.com/2014/04/15/github-guidelines.html).
 Make sure your build is green before you contribute
-your pull request. You will need to have [Ruby](https://www.ruby-lang.org/en/) 2.3+ and
+your pull request. You will need to have
+[Ruby](https://www.ruby-lang.org/en/) 2.3+ and
 [Bundler](https://bundler.io/) installed. Then:
 
-```
-$ bundle update
-$ bundle exec rake
+```bash
+bundle update
+bundle exec rake
 ```
 
 If it's clean and you don't see any error messages, submit your pull request.
