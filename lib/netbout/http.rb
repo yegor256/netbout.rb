@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: MIT
 
 require 'backtrace'
+require 'cgi/escape'
 require 'iri'
 require 'typhoeus'
 require_relative 'version'
