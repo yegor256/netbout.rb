@@ -17,10 +17,10 @@ class Netbout::Tags
   end
 
   def to_a
-    JSON.parse(Netbout::Http.new(@iri.append('/tags').append(@id), @token).get.response_body)
+    JSON.parse(Netbout::Http.new(@iri.append('tags').append(@id), @token).get.response_body)
   end
 
   def put(key, value)
-    Netbout::Http.new(@iri.append('/b').append(@id).append('/tag'), @token).post('name' => key, 'value' => value)
+    Netbout::Http.new(@iri.append('b').append(@id).append('tag'), @token).post('name' => key, 'value' => value)
   end
 end

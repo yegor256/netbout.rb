@@ -21,7 +21,7 @@ class Netbout::Inbox
   end
 
   def identity
-    JSON.parse(Netbout::Http.new(@iri.append('/self'), @token).get.response_body)['identity']
+    JSON.parse(Netbout::Http.new(@iri.append('self'), @token).get.response_body)['identity']
   end
 
   def search(query = '')
@@ -29,13 +29,13 @@ class Netbout::Inbox
   end
 
   def start(title)
-    take(Integer(Netbout::Http.new(@iri.append('/start'), @token).post('title' => title).headers['X-Netbout-Bout'], 10))
+    take(Integer(Netbout::Http.new(@iri.append('start'), @token).post('title' => title).headers['X-Netbout-Bout'], 10))
   end
 
   def take(id)
     Netbout::Bout.new(
       @iri, @token,
-      JSON.parse(Netbout::Http.new(@iri.append('/bout').append(id), @token).get.response_body)
+      JSON.parse(Netbout::Http.new(@iri.append('bout').append(id), @token).get.response_body)
     )
   end
 end
