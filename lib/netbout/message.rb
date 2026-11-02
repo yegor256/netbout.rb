@@ -27,14 +27,14 @@ class Netbout::Message
   end
 
   def flags
-    JSON.parse(Netbout::Http.new(@iri.append('/flags').append(id), @token).get.response_body)
+    JSON.parse(Netbout::Http.new(@iri.append('flags').append(id), @token).get.response_body)
   end
 
   def attach(flag)
-    Netbout::Http.new(@iri.append('/m').append(id).append('/attach'), @token).post('name' => flag)
+    Netbout::Http.new(@iri.append('m').append(id).append('attach'), @token).post('name' => flag)
   end
 
   def detach(flag)
-    Netbout::Http.new(@iri.append('/m').append(id).append('/detach').add(name: flag), @token).get
+    Netbout::Http.new(@iri.append('m').append(id).append('detach').add(name: flag), @token).get
   end
 end
