@@ -26,7 +26,7 @@ class Netbout::Search
   end
 
   def each
-    entry = @iri.append('/search').add(q: @query).add(limit: '10')
+    entry = @iri.append('search').add(q: @query).add(limit: '10')
     offset = 0
     loop do
       json = JSON.parse(Netbout::Http.new(entry.over(offset: offset), @token).get.response_body)
