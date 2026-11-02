@@ -34,7 +34,7 @@ class Netbout::Bout
     take(
       Integer(
         Netbout::Http.new(
-          @iri.append('/b').append(id).append('/post'),
+          @iri.append('b').append(id).append('post'),
           @token
         ).post('text' => text).headers['X-Netbout-Message'],
         10
@@ -45,7 +45,7 @@ class Netbout::Bout
   def take(id)
     Netbout::Message.new(
       @iri, @token,
-      JSON.parse(Netbout::Http.new(@iri.append('/message').append(id), @token).get.response_body)
+      JSON.parse(Netbout::Http.new(@iri.append('message').append(id), @token).get.response_body)
     )
   end
 
