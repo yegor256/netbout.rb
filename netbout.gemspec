@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = ['README.md', 'LICENSE.txt']
   s.add_dependency('backtrace', '~>0.3')
   s.add_dependency('iri')
-  s.add_dependency('json', '~>2.2')
+  s.add_dependency('json', '>=2.2', '<4.0')
   s.add_dependency('openssl', '>=1.0')
   s.add_dependency('rainbow', '~>3.0')
   s.add_dependency('typhoeus', '~>1.3')
